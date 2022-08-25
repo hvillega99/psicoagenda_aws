@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/uikit/uikit.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="css/test.css">
+
+    <title>PsicoAgenda</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <h2 class="navbar-brand">PsicoAgenda</h2>
+        </div>
+    </nav>
+
+
+    <div class="row justify-content-start">
+
+        <div class="col-md-2 ps-4 pt-2" id="menu">
+
+            <div class="card text-center">
+                <div class="card-body bg-ligth">
+                    <img src="./img/perfil.png" class="img-fluid" alt="profile">
+                    <p id="nombre" class="card-text"></p>
+                </div>
+                <div class="card-footer">
+                    <a onclick="borrarL()"><img src="./img/salir.png" class="img-fluid" alt="salir">Salir</a>
+                </div>
+            </div>
+
+            <hr>
+            
+            <ul class="uk-tab-right" uk-tab>
+                <li class="uk-active tab" id="tab-inicio"><a href="">Inicio</a></li>
+                <li class="tab"><a href="#" id="tab-agendar">Agendar cita</a></li>
+                <li class="tab"><a href="#" id="tab-historial">Citas anteriores</a></li>
+                <li class="tab"><a href="#" id="tab-perfil">Datos personales</a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-10">
+            <div id="message" class="text-center"></div>
+
+            <div id="inicio" class="option-panel pt-4">
+              <div class="text-center">
+                <h3 id="saludo"></h3>
+                <p id="status"></p>
+                <div id="cita-info"></div>
+              </div>
+            </div>
+
+            <div id="agendar" class="option-panel  pt-4" style="display: none;">
+                <h3 class="text-center">Agendar cita</h3>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <h5>Psicólogos</h5>
+                        <div id="psicologos" class="d-flex flex-column"></div>
+                    </div>
+                    <div class="col-md-8">
+                        <h5>Turnos disponibles</h5>
+                        <id id="turnos-disponibles"></id>
+                    </div>
+                </div>
+            </div>
+
+            <div id="historial" class="option-panel  pt-4" style="display: none;"></div>
+
+            <div id="perfil" class="option-panel  pt-4" style="display: none;">
+                <h3 class="text-center">Datos personales</h3>
+                <div class="card">
+                    <div class="card-body pe-4">
+                        <p id="perfilNombre"></p>
+                        <p id="perfilCedula"></p>
+                        <p id="perfilMail"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+    <script src="js/uikit/uikit.min.js"></script>
+    <script src="js/uikit/uikit-icons.min.js"></script>
+    <script src="js/paciente.js"></script>
+</html>

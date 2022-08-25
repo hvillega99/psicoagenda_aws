@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    
+    <title>Registro</title>
+</head>
+<body class="container p-4">
+
+    <div class="row justify-content-center">
+
+        <div class="card col-md-3 text-center">
+
+            <div class="card-header">
+                <h2>Registro</h2>
+            </div>
+            
+            <form id="registro-form" class="card-body">
+
+                <div id="message"></div>
+
+                <div class="form-group">
+                    <input type="text" id="fullname" class="form-control" placeholder="Nombre Completo" autofocus required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="cedula" class="form-control" placeholder="Cédula de identidad" required>
+                  </div>
+                <div class="form-group">
+                  <input type="email" id="email" class="form-control" placeholder="Correo electrónico" required>
+                </div>
+                <div class="form-group">
+                  <input type="password" id="password" class="form-control" placeholder="Contraseña" aria-describedby="passwordHelpInline" required>
+                </div>
+                <span id="passwordHelpInline" class="form-text"></span>
+                <div class="form-group">
+                    <input type="password" id="password2" class="form-control" placeholder="Repita la contraseña" aria-describedby="passwordHelpInline2" required>
+                </div>
+                <span id="passwordHelpInline2" class="form-text"></span>
+                <div class="form-group">
+                    Soy:
+                    <div class="btn-group" role="group" id="rol">
+                        <input type="radio" class="btn-check" name="btnradio" id="radio-paciente" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="radio-paciente">Paciente</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="radio-psicologo" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="radio-psicologo">Psicólogo</label>
+                      </div>
+                </div>
+                <button type="Submit" class="btn btn-primary">
+                  Crear cuenta
+                </button>
+                <a class="btn btn-secondary" href="login.html">Volver</a>
+            </form>
+        </div>
+
+    </div>
+    
+</body>
+    <script src="js/registro.js"></script>
+</html>

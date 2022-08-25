@@ -1,0 +1,46 @@
+body{
+  overflow-x: hidden;
+}
+
+.tab{
+  margin-bottom: 25px;
+}
+
+#menu{
+  background-color: #ECF0F1;
+  height: 100vh;
+}
+
+#turnos-disponibles{
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  row-gap: 2px;
+  column-gap: 2px;
+}
+
+#form-turno{
+  text-align: center;
+}
+
+.form-group{
+  margin: 25px;
+}
+
+.label-form{
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  #turnos-disponibles{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 2px;
+    column-gap: 2px;
+  }
+
+  #menu{
+    background-color: #ECF0F1;
+    height: 100%;
+  }
+
+}

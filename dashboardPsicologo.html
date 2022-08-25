@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/uikit/uikit.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="css/test.css">
+
+    <title>PsicoAgenda</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <h2 class="navbar-brand">PsicoAgenda</h2>
+        </div>
+    </nav>
+
+
+    <div class="row justify-content-start">
+
+        <div class="col-md-2 ps-4 pt-2" id="menu">
+
+            <div class="card text-center">
+                <div class="card-body bg-ligth">
+                    <img src="./img/perfil.png" class="img-fluid" alt="profile">
+                    <p id="nombre" class="card-text"></p>
+                </div>
+                <div class="card-footer">
+                    <a onclick="borrarL()"><img src="./img/salir.png" class="img-fluid" alt="salir">Salir</a>
+                </div>
+            </div>
+
+            <hr>
+
+            <ul class="uk-tab-right" uk-tab>
+                <li class="uk-active tab" id="tab-inicio"><a href="">Inicio</a></li>
+                <li class="tab"><a href="#" id="tab-citas">Citas</a></li>
+                <li class="tab"><a href="#" id="tab-agendar">Turnos</a></li>
+                <li class="tab"><a href="#" id="tab-perfil">Datos personales</a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-10">
+            <div id="message" class="text-center"></div>
+
+            <div id="inicio" class="option-panel pt-4">
+                <div class="text-center">
+                    <h3 id="saludo"></h3>
+                    <p id="status"></p>
+                    <div id="cita-info">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                División de turnos
+                            </div>
+                            <div class="card-body" id="nEstadisticas"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="agendar" class="option-panel pt-4" style="display: none;">
+                <h3 class="text-center">Turnos</h3>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <h5>Crear Turnos</h5>
+                        <form id="form-turno"> 
+                            <div class="form-group">
+                                <label for="fecha" class="label-form">Fecha: </label>
+                                <input id="fecha" type="date" required> <br>
+                            </div>
+                            <div class="form-group">
+                                <Label for="hora" class="label-form">Hora: </Label>
+                                <input id="hora" type="time" required> <br>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="crear-button" class="btn btn-primary">Crear Turno</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h5>Turnos disponibles</h5>
+                        <id id="turnos-disponibles"></id>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="crear" class="option-panel pt-4" style="display: none;">
+
+                
+            </div>
+
+            <div id="citas" class="option-panel pt-4" style="display: none;">
+                <h3 class="text-center">Citas</h3>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <h5>Pacientes</h5>
+                        <input id="fecha-citas" type="date" class="cita" required> <br>
+                        <div id="lista-pacientes" class="d-flex flex-column pt-2"></div>
+                    </div>
+                    <div class="col-md-8 p-4">
+                        <id id="detalles-cita"></id>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Historia clínica</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="HC-content"></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="perfil" class="option-panel  pt-4" style="display: none;">
+                <h3 class="text-center">Datos personales</h3>
+                <div class="card">
+                    <div class="card-body pe-4">
+                        <p id="perfilNombre"></p>
+                        <p id="perfilCedula"></p>
+                        <p id="perfilMail"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+    <script src="js/uikit/uikit.min.js"></script>
+    <script src="js/uikit/uikit-icons.min.js"></script>
+    <script src="js/psicologo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+</html>
